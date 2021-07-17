@@ -4,16 +4,16 @@
 
 FILE* fp;
 
-void savefile(int *a)
+void savefile(char *a)
 {
-    fprintf(fp, "%d", *a);
+    fprintf(fp, "%s", a);
 }
 
 int main(void)
 {
-    int a= 123456789;
+    char *a="Hello World!";
     fp= fopen("testfile.txt", "wt");
-    savefile(&a);
+    savefile(a);
     fclose(fp);
    return 0;
 }
